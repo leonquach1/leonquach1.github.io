@@ -13,14 +13,13 @@ function setup() {
   createCanvas(400, 400);
   angleMode(DEGREES);
 
-  mic = new p5.AudioIn();
-  mic.start();
-  
+
+
   leaf1=new leaf(width * .08, height * .65, -3, .5);
   leaf2=new leaf(width * .5, height * .4, -20, 1);
    leaf3=new leaf(width * .1, height * .35, -30, .5);
   leaf4=new leaf(width * .1, height * .3, 30, 1);
-  
+
 }
 
 function draw() {
@@ -30,7 +29,7 @@ function draw() {
   micLevel = mic.getLevel(.9);
   angleLeftwing = map(micLevel, 0, .1, 45, 86); //wiggle
   angleRightwing = map(micLevel, 0, .1, 355, 396); //wiggle
-  
+
   background(161, 222, 227);
 
   /*if(circ == true){
@@ -39,34 +38,35 @@ function draw() {
   //shapes
   //drawLeaf();
   drawBirdBody();
-  
+
   //xPos, yPos, Rotation
   drawBranch(width * .3, height * .8, 5);
   drawBranch(width * .7, height * .4, 40);
   drawBranch(width * .8, height * .3, 40);
 
   drawFeet();
-  
+
   drawBeak(angleBeak);
-  
+
   drawLeftWing(angleLeftwing);
 
   drawRightWing(angleRightwing);
-  
+
   leaf1.display();
   leaf2.display();
   leaf3.display();
   leaf4.display();
-  
+
   leaf1.move();
   leaf2.move();
   leaf3.move();
   leaf4.move();
-  
+
 }
 
 function mousePressed() {
-
+  mic = new p5.AudioIn();
+  mic.start();
   if (mouseX > width * .3 && mouseX < width * .7 && mouseY > height * .78 && mouseY < height * .86) {
     console.log("mouse beep in here");
     angleBeak = -angleBeak;
@@ -74,7 +74,7 @@ function mousePressed() {
   }
   /*else if(mouseX < width * .2 || mouseX > width * .8){
      //circ = true;
-    
+
   }*/
 }
 
@@ -96,12 +96,12 @@ function drawBirdBody() {
   noStroke();
   //body ellipse(x, y, w, h, detail)
   ellipse(width * .5, height * .54, 140, 225);
-  //tail 
+  //tail
   triangle(width * .56, height * .78, width * .43, height * .78, width * .5, height * .9);
   push();
   fill(0);
   //eye
-  
+
   ellipse(width * .43, height * .37, 15, 15);
   ellipse(width * .56, height * .37, 15, 15);
   mouseMoved();
@@ -166,4 +166,3 @@ function mouseMoved(){
   ellipse(width * .56, height * .37, 10, 10);
   pop();
 }
-
