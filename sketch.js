@@ -6,14 +6,15 @@ let leaf1;
 let leaf2;
 let leaf3;
 let leaf4;
-let userClicked = false;
+
 //let circ = false;
 function setup() {
   //console.log(mySymbolicVariableName);
   createCanvas(400, 400);
   angleMode(DEGREES);
 
-
+  mic = new p5.AudioIn();
+  mic.start();
 
   leaf1=new leaf(width * .08, height * .65, -3, .5);
   leaf2=new leaf(width * .5, height * .4, -20, 1);
@@ -23,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  if(userClicked = true){
+
   //console.log("mic level " + mic.getLevel());
   //console.log("Mouse Y is:" + mouseX);
   micLevel = mic.getLevel(.9);
@@ -61,13 +62,10 @@ function draw() {
   leaf2.move();
   leaf3.move();
   leaf4.move();
-}
+
 }
 
 function mousePressed() {
-  mic = new p5.AudioIn();
-  mic.start();
-  userClicked = true;
 
   if (mouseX > width * .3 && mouseX < width * .7 && mouseY > height * .78 && mouseY < height * .86) {
     console.log("mouse beep in here");
