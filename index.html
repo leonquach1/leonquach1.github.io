@@ -1,14 +1,63 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>(Your Name)</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-  </head>
-  <body>
-    <h1>Hello World -- This is my website edited in atom!</h1>
-    <p>I'm making this to host my portfolio for free.</p>
-    <a href="https://leonquach1.github.io/sketch">Node 1</a>
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home Page</title>
+<link href="_css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header role="banner">
+    <h1 id="top">Leon Quach</h1>
+ <nav role="navigation">
+     <ul class="topnav">
+     <li class="navi_home"><a href="index.html" title="Home">INFO</a></li>
+      <li class="navi_103"><a href="103.html" title="103">ART 103</a></li>
+    
+<!--<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>-->
+    </ul>
+</nav> 
+    
+</header>
+<main role="main">
+<article role="article">
+    <header>
+    <p>Under Construction</p>
+    </header>
+</article>
+</main>
+    
+<footer role="contentinfo">
+<p> &copy; Leon Quach </p>
+</footer>
+    
+    
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
-  </body>
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+</body>    
 </html>
